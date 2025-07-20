@@ -1,0 +1,90 @@
+# mdBook配置文件
+
+[book]
+# 书籍基本信息
+title = "AI 职场进阶指南"
+authors = ["NeoCloudAI"]
+description = "AI 是新型电力。它将改变和改善人类生活的所有领域。"
+language = "zh"
+multilingual = false
+src = "src"
+
+# 默认主题设置
+[output.html]
+# 网站主题：light, rust, navy, ayu
+default-theme = "light"
+# 是否支持主题切换
+preferred-dark-theme = "navy"
+# 自定义CSS和JS
+additional-css = ["theme/custom.css"]
+additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js"]
+# 代码高亮主题
+# 启用搜索功能
+search-enabled = true
+# 启用复制代码按钮
+copy-fonts = true
+# 启用章节编号
+git-repository-url = "https://github.com/neo-cloud-ai/How-to-Build-Your-Career-in-AI"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/neo-cloud-ai/How-to-Build-Your-Career-in-AI/edit/main/{path}"
+
+# 启用数学公式支持
+[output.html.mathjax]
+support = true
+
+# 启用代码高亮
+[output.html.syntax_highlighting]
+theme = "base16-ocean.dark"
+highlight-code = true
+
+# 启用目录
+[output.html.fold]
+enable = true
+level = 1
+
+# 自定义菜单项
+[output.html.navbar]
+items = [
+    { path = "https://github.com/neo-cloud-ai/How-to-Build-Your-Career-in-AI", title = "GitHub" },
+]
+
+# 搜索设置
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
+
+# PDF输出配置
+#[output.pdf]
+#output-name = "How-to-Build-Your-Career-in-AI"
+#paper-size = "a4"
+#margin-left = 72
+#margin-right = 72
+#margin-top = 72
+#margin-bottom = 72
+#default-font-family = "sans"
+#font-size = 12
+
+# 目录结构
+[build]
+build-dir = "book"
+create-missing = true
+use-default-preprocessors = true
+
+# 预处理器设置
+[preprocessor.index]
+# 启用目录索引
+enable = true
+
+[preprocessor.links]
+# 启用链接检查
+enable = true
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"

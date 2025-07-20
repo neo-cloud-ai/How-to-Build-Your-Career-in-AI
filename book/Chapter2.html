@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第2章：学习技术技能，打造有前景的 AI 职业生涯 - AI 职场进阶指南</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="AI 是新型电力。它将改变和改善人类生活的所有领域。">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI 职场进阶指南</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/neo-cloud-ai/How-to-Build-Your-Career-in-AI" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/neo-cloud-ai/How-to-Build-Your-Career-in-AI/edit/main/src/Chapter2.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第-2-章学习技术技能打造有前景的-ai-职业生涯"><a class="header" href="#第-2-章学习技术技能打造有前景的-ai-职业生涯">第 2 章：学习技术技能，打造有前景的 AI 职业生涯</a></h1>
+<p>在上一章中，我介绍了在 AI 领域打造职业生涯的三个关键步骤：学习基础技术技能、从事项目、以及找工作，所有这些都通过成为社群的一员得到支持。在本章中，我想更深入地探讨第一步：学习基础技能。</p>
+<p>关于 AI 发表的研究论文比任何人一生能读的都要多。因此，在学习时，优先选择主题至关重要。我认为，对于机器学习技术职业生涯最重要的主题是：</p>
+<h2 id="基础机器学习技能"><a class="header" href="#基础机器学习技能">基础机器学习技能：</a></h2>
+<p>例如，理解线性回归、逻辑回归、神经网络、决策树、聚类和异常检测等模型非常重要。除了特定模型，更重要的是理解机器学习如何以及为何有效的核心概念，例如偏差/方差、成本函数、正则化、优化算法和误差分析。</p>
+<h2 id="深度学习"><a class="header" href="#深度学习">深度学习：</a></h2>
+<p>这已成为机器学习中如此大的一部分，以至于若对其缺乏一定的理解，很难在该领域出类拔萃！了解神经网络的基础知识、使其工作的实用技能（如超参数调优）、卷积网络、序列模型和 Transformer 模型都很有价值。</p>
+<h2 id="与机器学习相关的数学"><a class="header" href="#与机器学习相关的数学">与机器学习相关的数学：</a></h2>
+<p>关键领域包括线性代数（向量、矩阵及其各种操作）以及概率与统计（包括离散和连续概率、标准概率分布、独立性、贝叶斯定理等基本规则以及假设检验）。此外，探索性数据分析（EDA）——使用可视化和其他方法系统地探索数据集——是一项被低估的技能。我发现 EDA 在以数据为中心的 AI 开发中特别有用，分析错误和获取洞察确实有助于推动进展！最后，对微积分的基本直观理解也有帮助。做好机器学习所需的数学一直在变化。例如，虽然某些任务需要微积分，但改进的自动微分软件使得发明和实现新的神经网络架构而无需做任何微积分成为可能。这在十年前几乎是不可能的。</p>
+<h2 id="软件开发"><a class="header" href="#软件开发">软件开发：</a></h2>
+<p>虽然仅凭机器学习建模技能你就可以找到工作并做出巨大贡献，但如果你还能编写优秀的软件来实现复杂的 AI 系统，你的工作机会将会增加。这些技能包括编程基础、数据结构（特别是与机器学习相关的，如数据框）、算法（包括与数据库和数据操作相关的）、软件设计、熟悉 Python、熟悉关键库如 TensorFlow 或 PyTorch 以及 scikit-learn。</p>
+<h2 id="要学的东西很多"><a class="header" href="#要学的东西很多">要学的东西很多！</a></h2>
+<p>即使你掌握了这个列表中的所有内容，我也希望你能继续学习并不断深化你的技术知识。我认识许多机器学习工程师，他们受益于在应用领域（如自然语言处理或计算机视觉）或技术领域（如概率图模型或构建可扩展软件系统）更深入的技能。</p>
+<p><strong>如何获得这些技能？</strong> 互联网上有很多好的内容，理论上，阅读几十个网页可能有效。但当目标是深入理解时，阅读零散的网页效率低下，因为它们往往相互重复、使用不一致的术语（这会拖慢你）、质量参差不齐，并且存在空白。这就是为什么一门好课程——将材料组织成连贯且合乎逻辑的形式——通常是掌握有意义的庞大知识体系最省时的方法。当你吸收了课程中可用的知识后，就可以转向研究论文和其他资源。</p>
+<p>最后，没有人能在周末甚至一个月内填鸭式地学会他们需要知道的一切。我所认识的每一位在机器学习方面很出色的人都是终身学习者。考虑到我们领域变化的速度如此之快，如果你想跟上步伐，除了持续学习之外几乎没有其他选择。</p>
+<p>如何能多年保持稳定的学习节奏？如果你能培养每周学习一点的习惯，你就能以感觉更轻松的方式取得显著进步。</p>
+<h2 id="养成新习惯的最佳方式"><a class="header" href="#养成新习惯的最佳方式">养成新习惯的最佳方式</a></h2>
+<p>我最喜欢的书之一是 BJ Fogg 的《微习惯：小改变带来大不同》(Tiny Habits: The Small Changes That Change Everything)。Fogg 解释说，养成新习惯的最佳方式是从小处着手并取得成功，而不是目标过大而失败。例如，与其试图每天锻炼 30 分钟，他建议只做一个俯卧撑，并持续去做。</p>
+<p>这种方法可能对那些想花更多时间学习的人有所帮助。如果你从要求自己每天观看，比如说，10 秒的教育视频开始——并且你持续这样做——每天学习的习惯就会自然养成。即使在那 10 秒里你什么也没学到，你也是在建立每天学习一点的习惯。在某些日子，也许你最终会学习一个小时甚至更长时间。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Chapter1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="Chapter3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Chapter1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="Chapter3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="theme/mermaid.min.js"></script>
+        <script src="theme/mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
