@@ -60,17 +60,6 @@ boost-paragraph = 1
 expand = true
 heading-split-level = 3
 
-# PDF输出配置
-#[output.pdf]
-#output-name = "How-to-Build-Your-Career-in-AI"
-#paper-size = "a4"
-#margin-left = 72
-#margin-right = 72
-#margin-top = 72
-#margin-bottom = 72
-#default-font-family = "sans"
-#font-size = 12
-
 # 目录结构
 [build]
 build-dir = "book"
@@ -88,3 +77,5 @@ enable = true
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
+
+[output.pdf]
