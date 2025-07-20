@@ -79,3 +79,4 @@ enable = true
 command = "mdbook-mermaid"
 
 [output.pdf]
+optional = true
