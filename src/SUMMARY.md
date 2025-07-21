@@ -23,3 +23,5 @@
 - [第11章：克服冒名顶替综合征](Chapter11.md)
 
 - [结语：珍惜每一天](Final_Thoughts.md)
+
+- [版权声明](Copyright.md)
